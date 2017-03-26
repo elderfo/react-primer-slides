@@ -1,0 +1,102 @@
+// Arrow functions
+
+
+function addBar (foo) { 
+    return foo + 'bar';
+}
+console.log(addBar('foo')); 
+// prints: 'foobar'
+
+
+const addBar = foo => {
+    return foo + 'bar';
+}
+console.log(addBar('foo')); 
+// prints: 'foobar'
+
+// Block scoped variables
+
+
+var foo = 'foo';
+foo = 'bar';
+console.log(foo); 
+// prints: 'bar'
+
+
+const foo = 'foo';
+foo = 'bar'; // not allowed
+
+let foo = 'foo';
+foo = 'bar';
+console.log(foo); 
+// prints: 'bar'
+
+// Classes
+
+
+var Foo = function() {
+    this.addBar = function(foo) {
+        return foo + 'bar';
+    }
+};
+
+var instance = new Foo();
+console.log(instance.addBar('foo')); 
+// prints: 'foobar'
+
+
+class Foo {
+    addBar(foo) {
+        return foo + 'bar';
+    }
+}
+
+const instance = new Foo();
+console.log(instance.addBar('foo')); 
+// prints: 'foobar'
+
+// Imports
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App.js';
+
+ReactDOM.render(
+  App, 
+  document.findElementById('root')
+);
+
+// Destructuring
+
+
+var obj = { foo: 'foo', bar: 'bar' };
+var foo = obj.foo;
+var bar = obj.bar;
+console.log(bar);
+// prints: 'foo', 'bar'
+
+
+const obj = { foo: 'foo', bar: 'bar'  };
+const { foo, bar } = obj;
+console.log(foo, bar);
+// prints: 'foo', 'bar'
+
+const talk = {
+  title: 'React Primer',
+  author: 'Chris Getsfred',
+  location: 'Greensboro',
+  attendees: ['Mike', 'Eric', 'JB']
+};
+const { title, attendees } = example;
+console.log(title, attendees);
+// prints: 'React Primer',
+// ['Mike', 'Eric', 'JB']
+
+
+
+
+
+
+
+
+

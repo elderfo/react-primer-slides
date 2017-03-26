@@ -1,0 +1,13 @@
+ES or EcmaScript is name of the specification for JavaScript (more to that)<br><br>
+Significant update over the last standard from 2009<br><br>
+Not all  browsers support the features of ES6, it's code will have to be transpiled to ES5<br>
+- The most common transpiler is `babel`. <br>
+- Polyfills to make up for stuff that doesn't exist yet<br>
+- We will not have to deal with this step.<br>
+<br>
+ES6 features:<br>
+- Arrow functions<br>
+- Scoped variables<br>
+- Classes<br>
+- Imports<br>
+- Destructuring<br>
