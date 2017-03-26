@@ -12,7 +12,7 @@ import {
   Text,
   Markdown,
   CodePane,
-  Code,
+  Code
 } from "spectacle";
 import CodeSlide from "spectacle-code-slide";
 
