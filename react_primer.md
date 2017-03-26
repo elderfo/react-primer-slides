@@ -31,6 +31,43 @@ Not all current browsers support all features so ES6 code will have to be transp
 
 More information: [https://github.com/lukehoban/es6features](https://github.com/lukehoban/es6features)
 
+# React components
+
+There are two types of components:
+
+* Class components
+* Functional components
+
+## Class components
+
+Class components are stateful. The only thing you have to do to have a class component is to implement the `render()` function and have it return JSX.
+
+## Functional Components
+
+Functional components are simply a function that returns React syntax.
+* They are focused 100% on the UI.
+* Do not require a class
+* They are stateless
+  * They rely on props passed down from parent container
+* They do not have access to the `this`
+* Faster due to less overhead
+
+# State, props, and events
+
+Best way to understand the communication tree in React: Props down, events up. Props are used to pass data down the component tree, events used to communicate back up the tree (changes, etc...).
+
+## State
+
+State is simply a JS object and is maintained by a class component. The state itself is immutable. To change it, you have to regenerate the state using the `setState()` function of a class component. This is what triggers a refresh.
+
+## Props
+
+Props are read-only values that are passed down the component tree. They will be the first argument in the `constructor` of a class component or of the function in a function component. 
+
+## Events
+
+Events communication changes/actions up the component tree.
+
 # Environment Setup
 
 ## Install node
@@ -57,34 +94,6 @@ There are tons of IDEs available for creating React applications. Idea/WebStorm 
 
 # Demo
 
-## Create Project
-
-Using `create-react-app` we will setup a project.
-
-`$ create-react-app tcdi-todo`
-
-## Project structure
-
-- `node_modules` - Stores all of the node modules. When the React application is built using node, modules will be loaded from here
-- `public` - Contains a boilerplate HTML file that React will attach to
-- `src` - Contains the source for the project
-- `project.json` - Contains the configuration of the project, including dependencies and scripts
-
-## npm scripts
-
-In the `package.json` file there are scripts, which are shortcuts to run scripts. Scripts can be executed by running `yarn run <script-name>` or `npm run <script-name>`.
-
-- `yarn run start` - runs the react application in dev mode
-- `yarn run build` - creates a production build of the application
-- `yarn run test` - runs tests in watch mode
-- `yarn run eject` - separates the app from the `create-react-app` ecosystem
-
-## Run in dev mode
-
-Start the application by running `yarn run start`. The application will be built and hosted using a local web server and a browser window will be opened.
-
-# Build a Todo application
-
 ## Requirements
 
 - To do items will have the following properties:
@@ -93,4 +102,58 @@ Start the application by running `yarn run start`. The application will be built
   - isCompleted - boolean - flag denoting whether the to do is completed
 - Users should be able create, update, delete and toggle complete on todo items
 
+## Create Project
 
+Using `create-react-app` we will setup a project.
+
+`$ create-react-app tcdi-todo`
+
+### Project structure
+
+- `node_modules` - Stores all of the node modules. When the React application is built using node, modules will be loaded from here
+- `public` - Contains a boilerplate HTML file that React will attach to
+- `src` - Contains the source for the project
+- `project.json` - Contains the configuration of the project, including dependencies and scripts
+
+### npm scripts
+
+In the `package.json` file there are scripts, which are shortcuts to run scripts. Scripts can be executed by running `yarn run <script-name>` or `npm run <script-name>`.
+
+- `yarn run start` - runs the react application in dev mode
+- `yarn run build` - creates a production build of the application
+- `yarn run test` - runs tests in watch mode
+- `yarn run eject` - separates the app from the `create-react-app` ecosystem
+
+### Run in dev mode
+
+Start the application by running `yarn run start`. The application will be built and hosted using a local web server and a browser window will be opened.
+
+## Build app
+
+* Drop in API
+* Add initial state to `App` component
+* Render list of todos
+  * Note `key` property 
+* Wire up load todos API (in ctor)
+* Extract `TodoListItem` to functional component
+* Add check box to `TodoListItem` for `isCompleted`
+* Add event invoker to `TodoListItem` checkbox for checked changed
+* Add event handler to `App` to call api with change to todo
+* Add delete button to `TodoListItem` with event invoker on click
+* Add event handler to `App` to call api with delete
+* Create a functional component `AddForm` and build layout (input, button)
+* Attempt to add event invoker to `AddForm`
+  * How do we get the title?
+    * Add event to pass data up? (will work, not as testable and now `App` needs to know about state of a child component)
+* Change to class component
+* Bind text input to state
+  * Type in box, show doesn't work (props are read-only, one-way bindings)
+* Add state change handler to input to enable typing
+* Fix handler on `Add` button to call local method
+* Add event handler in `App` for adding todo, add to api
+* Add `isCompleted` checkbox to ui, update calls
+* I want to add a `line-through` to items where `isCompleted === true` 
+  * Don't go deep into styling
+* Do styling with css class
+  * Note the css file next to the class and the `import`
+* Do styling with inline styles
