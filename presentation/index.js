@@ -161,7 +161,7 @@ export default class Presentation extends React.Component {
           </List>
           <Heading size={5} textAlign="left">Behavior</Heading>
           <List>
-            <ListItem textAlign="left">Users should be able to create, update, delete and toggle complete on todo items</ListItem>
+            <ListItem textAlign="left">Users should be able to create, delete and toggle completed state on todo items</ListItem>
           </List>
         </Slide>
         <Slide bgColor="primary">
