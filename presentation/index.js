@@ -141,7 +141,7 @@ export default class Presentation extends React.Component {
           <List>
             <Appear><ListItem>Install Node<br /><Code>$ brew update && brew install node</Code></ListItem></Appear>
             <Appear><ListItem>Install Yarn<br /><Code>$ brew install yarn</Code></ListItem></Appear>
-            <Appear><ListItem>Install create-react-app<br /><Code>$ yarn global install create-react-app</Code></ListItem></Appear>
+            <Appear><ListItem>Install create-react-app<br /><Code>$ yarn global add create-react-app</Code></ListItem></Appear>
             <Appear><ListItem>Setup an IDE (Idea/Webstorm, VS Code, Atom, etc...)</ListItem></Appear>
           </List>
         </Slide>
