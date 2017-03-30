@@ -74,16 +74,16 @@ export default class Presentation extends React.Component {
           lang="js"
           code={require("raw-loader!../assets/es6.example")}
           ranges={[
-            { loc: [0, 0], title: "Whut dat?" },
+            { loc: [0, 0], title: "Some changes" },
             { loc: [3, 8], note: "Standard ES Function" },
             { loc: [10, 15], note: "ES6 Arrow Function", notes: "Written as an arrow function moves us more into the functional paradigm. Similar behavior was available prior to ES6" },
             { loc: [19, 23], note: "ES5 Variable Declaration" },
             { loc: [25, 32], note: "ES6 Variable Declaration", notes: "let/const imply intent" },
             { loc: [71, 76], note: "ES5 Property Retrieval", notes: "Lets build an object with a property of foo" },
             { loc: [78, 82], note: "ES6 Destructuring", notes: "Extract multiple properties in a single a single call" },
-            { loc: [83, 89], notes: "Setup a more complex object" },
-            { loc: [89, 93], notes: "Extract title and attendees from it" },
-            { loc: [82, 93], title: "Oh snap" },
+            // { loc: [83, 89], notes: "Setup a more complex object" },
+            // { loc: [89, 93], notes: "Extract title and attendees from it" },
+            // { loc: [82, 93], title: "Oh snap" },
             { loc: [36, 45], note: "ES5 \"Classes\"", notes: "Next code segment hides the title" },
             { loc: [45, 56], note: "ES6 Classes" },
             { loc: [59, 60], note: "Import from modules" },
@@ -147,10 +147,10 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide bgColor="tertiary" textColor="black">
           <Heading size={3} caps>Requirements</Heading>
-          <Heading size={5} textAlign="left">Object</Heading>
+          <Heading size={5} textAlign="left">Todo Object</Heading>
           <List>
             <ListItem textAlign="left">
-              <Code>id</Code> - uuid - system generated
+              <Code>id</Code> - number - system generated
             </ListItem>
             <ListItem textAlign="left">
               <Code>title</Code> - string - title of the todo

@@ -72,7 +72,7 @@ ReactDOM.render(
 var obj = { foo: 'foo', bar: 'bar' };
 var foo = obj.foo;
 var bar = obj.bar;
-console.log(bar);
+console.log(foo, bar);
 // prints: 'foo', 'bar'
 
 
