@@ -75,10 +75,10 @@ export default class Presentation extends React.Component {
           code={require("raw-loader!../assets/es6.example")}
           ranges={[
             { loc: [0, 0], title: "Some changes" },
-            { loc: [3, 8], note: "Standard ES Function" },
-            { loc: [10, 15], note: "ES6 Arrow Function", notes: "Written as an arrow function moves us more into the functional paradigm. Similar behavior was available prior to ES6" },
             { loc: [19, 23], note: "ES5 Variable Declaration" },
             { loc: [25, 32], note: "ES6 Variable Declaration", notes: "let/const imply intent" },
+            { loc: [3, 8], note: "Standard ES Function" },
+            { loc: [10, 15], note: "ES6 Arrow Function", notes: "Written as an arrow function moves us more into the functional paradigm. Similar behavior was available prior to ES6" },
             { loc: [71, 76], note: "ES5 Property Retrieval", notes: "Lets build an object with a property of foo" },
             { loc: [78, 82], note: "ES6 Destructuring", notes: "Extract multiple properties in a single a single call" },
             // { loc: [83, 89], notes: "Setup a more complex object" },
@@ -94,6 +94,24 @@ export default class Presentation extends React.Component {
         <Slide bgColor="quartenary">
           <Markdown>More information on ES6 features: [https://github.com/lukehoban/es6features](https://github.com/lukehoban/es6features)</Markdown>
         </Slide>
+        <CodeSlide bgColor="code"
+          transition={[]}
+          textColor="secondary"
+          lang="js"
+          code={require("raw-loader!../assets/example.ts")}
+          ranges={[
+            { loc: [0, 0], title: "Well I need my types!" },
+            { loc: [0, 19] },
+            { loc: [126, 133], note: "ES6 Variable Declaration" },
+            { loc: [140, 147], note: "Typescript Variable Declaration", notes: "reduces errors" },
+            { loc: [191, 195], note: "ES6 Destructuring" },
+            { loc: [202, 211], note: "Typescript Destructuring" },
+            { loc: [102, 107], note: "ES6 Arrow Function" },
+            { loc: [114, 119], note: "Typescript Arrow Function", notes: "Types can be implict when working with primities" },
+            { loc: [155, 164], note: "ES6 Classes" },
+            { loc: [171, 184], note: "Typescript Classes" }
+          ]}
+        />
         <Slide bgColor="tertiary" textColor="black">
           <Heading size="3">React Components</Heading>
           <List textColor="black">
@@ -117,9 +135,9 @@ export default class Presentation extends React.Component {
         <Slide bgColor="primary" textColor="black">
           <Heading size="3">State</Heading>
           <List textColor="black">
-            <Appear><ListItem>Maintianed by class component</ListItem></Appear>
-            <Appear><ListItem>Immutable Javascsript object structure</ListItem></Appear>
-            <Appear><ListItem>Use <Code>setState()</Code> to change</ListItem></Appear>
+            <Appear><ListItem>Maintianed by classes or functional components (using hooks)</ListItem></Appear>
+            <Appear><ListItem>Immutable primitives, arrays or object structure</ListItem></Appear>
+            <Appear><ListItem>Changed only by using state functions</ListItem></Appear>
           </List>
         </Slide>
         <Slide bgColor="secondary" textColor="black">
@@ -127,7 +145,7 @@ export default class Presentation extends React.Component {
           <List textColor="black">
             <Appear><ListItem>Read-only</ListItem></Appear>
             <Appear><ListItem>Passed down the component tree</ListItem></Appear>
-            <Appear><ListItem>Provided to constructor/function</ListItem></Appear>
+            <Appear><ListItem>Available via constructor or function parameters</ListItem></Appear>
           </List>
         </Slide>
         <Slide bgColor="tertiary" textColor="black">
@@ -139,8 +157,8 @@ export default class Presentation extends React.Component {
         <Slide bgColor="quartenary" textColor="black">
           <Heading size={3} caps>Environment setup</Heading>
           <List>
-            <Appear><ListItem>Install Node<br /><Code>$ brew update && brew install node</Code></ListItem></Appear>
-            <Appear><ListItem>Install Yarn<br /><Code>$ brew install yarn</Code></ListItem></Appear>
+            <Appear><ListItem>Install Node<br /><Code>$ choco install nodejs</Code></ListItem></Appear>
+            <Appear><ListItem>Install Yarn<br /><Code>$ choco install yarn</Code></ListItem></Appear>
             <Appear><ListItem>Install create-react-app<br /><Code>$ yarn global add create-react-app</Code></ListItem></Appear>
             <Appear><ListItem>Setup an IDE (Idea/Webstorm, VS Code, Atom, etc...)</ListItem></Appear>
           </List>
@@ -150,7 +168,7 @@ export default class Presentation extends React.Component {
           <Heading size={5} textAlign="left">Todo Object</Heading>
           <List>
             <ListItem textAlign="left">
-              <Code>id</Code> - number - system generated
+              <Code>id</Code> - uuid - system generated
             </ListItem>
             <ListItem textAlign="left">
               <Code>title</Code> - string - title of the todo
