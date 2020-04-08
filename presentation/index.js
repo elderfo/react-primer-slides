@@ -103,7 +103,7 @@ export default class Presentation extends React.Component {
             { loc: [0, 0], title: "Well I need my types!" },
             { loc: [0, 19] },
             { loc: [126, 133], note: "ES6 Variable Declaration" },
-            { loc: [140, 147], note: "Typescript Variable Declaration", notes: "reduces errors" },
+            { loc: [140, 147], note: "Typescript Variable Declaration", notes: "reduces errors, primitives: string, number, boolean; others: object, array" },
             { loc: [191, 195], note: "ES6 Destructuring" },
             { loc: [202, 211], note: "Typescript Destructuring" },
             { loc: [102, 107], note: "ES6 Arrow Function" },
