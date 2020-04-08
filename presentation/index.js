@@ -115,8 +115,8 @@ export default class Presentation extends React.Component {
         <Slide bgColor="tertiary" textColor="black">
           <Heading size="3">React Components</Heading>
           <List textColor="black">
-            <Appear><ListItem>Functional component (stateless)</ListItem></Appear>
-            <Appear><ListItem>Class component (stateful)</ListItem></Appear>
+            <Appear><ListItem>Class component</ListItem></Appear>
+            <Appear><ListItem>Functional component</ListItem></Appear>
           </List>
         </Slide>
         <CodeSlide bgColor="code"
@@ -125,8 +125,8 @@ export default class Presentation extends React.Component {
           lang="js"
           code={require("raw-loader!../assets/react.example")}
           ranges={[
-            { loc: [9, 14], title: "Functional component" },
-            { loc: [3, 8], title: "Class component" }
+            { loc: [3, 8], title: "Class component" },
+            { loc: [9, 14], title: "Functional component" }
           ]}
         />
         <Slide bgColor="secondary" textColor="black">
@@ -136,10 +136,22 @@ export default class Presentation extends React.Component {
           <Heading size="3">State</Heading>
           <List textColor="black">
             <Appear><ListItem>Maintianed by classes or functional components (using hooks)</ListItem></Appear>
-            <Appear><ListItem>Immutable primitives, arrays or object structure</ListItem></Appear>
-            <Appear><ListItem>Changed only by using state functions</ListItem></Appear>
+            <Appear><ListItem>Immutable primitives, arrays or objects</ListItem></Appear>
+            <Appear><ListItem>Changed only by using state functions (<Code>setState()</Code> or <Code>useState</Code>)</ListItem></Appear>
           </List>
         </Slide>
+        <CodeSlide bgColor="code"
+          transition={[]}
+          textColor="secondary"
+          lang="js"
+          code={require("raw-loader!../assets/react.example")}
+          ranges={[
+            { loc: [37, 57], note: "Class component" },
+            { loc: [37, 57] },
+            { loc: [58, 70], note: "Functional component" },
+            { loc: [58, 70] }
+          ]}
+        />
         <Slide bgColor="secondary" textColor="black">
           <Heading size="3">Props</Heading>
           <List textColor="black">
@@ -148,13 +160,32 @@ export default class Presentation extends React.Component {
             <Appear><ListItem>Available via constructor or function parameters</ListItem></Appear>
           </List>
         </Slide>
+        <CodeSlide bgColor="code"
+          transition={[]}
+          textColor="secondary"
+          lang="js"
+          code={require("raw-loader!../assets/react.example")}
+          ranges={[
+            { loc: [3, 14] }
+          ]}
+        />
         <Slide bgColor="tertiary" textColor="black">
           <Heading size="3">Events</Heading>
           <List textColor="black">
             <Appear><ListItem>Pass actions/data up component tree</ListItem></Appear>
           </List>
         </Slide>
-        <Slide bgColor="quartenary" textColor="black">
+        <CodeSlide bgColor="code"
+          transition={[]}
+          textColor="secondary"
+          lang="js"
+          code={require("raw-loader!../assets/react.example")}
+          ranges={[
+            { loc: [17, 34] }
+          ]}
+        />
+        {/*
+        <Slide bgColor="quartenary" textColor="black" >
           <Heading size={3} caps>Environment setup</Heading>
           <List>
             <Appear><ListItem>Install Node<br /><Code>$ choco install nodejs</Code></ListItem></Appear>
@@ -163,6 +194,7 @@ export default class Presentation extends React.Component {
             <Appear><ListItem>Setup an IDE (Idea/Webstorm, VS Code, Atom, etc...)</ListItem></Appear>
           </List>
         </Slide>
+        */}
         <Slide bgColor="tertiary" textColor="black">
           <Heading size={3} caps>Requirements</Heading>
           <Heading size={5} textAlign="left">Todo Object</Heading>

@@ -7,10 +7,82 @@ class Greeting extends React.Component {
   }
 }
 
-const Header = ({name}) => {
+const Header = (props) => {
   return (
-    <h1>Hello, {name}</h1>
+    <h1>Hello, {props.name}</h1>
   );
 }
 
 render(Greeting, document.findElementById('root'));
+
+class Greeting extends React.Component {
+  render() {
+    return (
+      <Header 
+        name="Chris" 
+        onClick={s => alert(s)} />
+    );
+  }
+}
+
+const Header = (props) => {
+  return (
+    <a onClick={_ => props.onClick("Clicked")}>
+      <h1>Hello, {props.name}</h1>
+    </a>
+  );
+}
+
+
+
+class ClickCounter extends React.Component {
+  state = { clicks: 0 };
+
+  addClick() {
+    this.setState({
+      clicks: this.state.clicks + 1
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <div> Clicks: {this.state.clicks}</div>
+        <button 
+          onClick={_ => this.addClick()}>
+          Click Me!</button>
+      </div>
+    );
+  }
+}
+
+const ClickCounter = () => {
+  const [clicks, setClicks] = React.useState(0);
+  return (
+    <div>
+      <div> Clicks: {clicks}</div>
+      <button 
+        onClick={_ => setClicks(clicks + 1)}>
+        Click Me!
+      </button>
+    </div>
+  );
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
