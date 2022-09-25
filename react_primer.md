@@ -2,22 +2,33 @@
 
 # What is React?
 
-- A declarative, efficient, and flexible JavaScript library for building user interfaces.
-- Component based
+- JavaScript library for building user interfaces.
+- Created, maintained and open sourced by Facebook/meta
 
 # Why React?
 
 - Fast and purely client side (moving load off of servers)
-- It's just JavaScript and HTML
-- It can consistently maintain state
-- Build resuable components
-- Testable (jest, mocha, etc..)
+- It's just JavaScript and HTML which a lot of people know and learning is incredibly prevalent
+- It can consistently maintain state, one of the biggest problems we face when building uis is properly maintaining state.
+- Build resuable, testable components
 - Designed for 'Learn once, build anywhere'
   - React Native
   - React VR
   - React Hardware (audrino, raspberry pi, etc...)
 
-## ES6 or ECMAScript6 (aka ECMAScript 2015)
+# What is a component?
+
+I have this can of Zoa. Describe it to me in the chat.
+
+Some attributes:
+
+- it holds liquid
+- it;s black
+- it has the rock as Black Adam on it
+- It's the rock's energu drink
+- It has a label
+
+<!-- ## ES6 or ECMAScript6 (aka ECMAScript 2015)
 
 ECMAScript 6, also known as ECMAScript 2015, is the latest version of the ECMAScript standard. ES6 is a significant update to the language, and the first update to the language since ES5 was standardized in 2009. Implementation of these features in major JavaScript engines is underway now. ([https://github.com/lukehoban/es6features](https://github.com/lukehoban/es6features))
 
@@ -29,14 +40,14 @@ Not all current browsers support all features so ES6 code will have to be transp
 - Imports
 - Destructuring
 
-More information: [https://github.com/lukehoban/es6features](https://github.com/lukehoban/es6features)
+More information: [https://github.com/lukehoban/es6features](https://github.com/lukehoban/es6features) -->
 
 # React components
 
 There are two types of components:
 
-* Class components
-* Functional components
+- Class components
+- Functional components
 
 ## Class components
 
@@ -45,12 +56,13 @@ Class components are stateful. The only thing you have to do to have a class com
 ## Functional Components
 
 Functional components are simply a function that returns React syntax.
-* They are focused 100% on the UI.
-* Do not require a class
-* They are stateless
-  * They rely on props passed down from parent container
-* They do not have access to the `this`
-* Faster due to less overhead
+
+- They are focused 100% on the UI.
+- Do not require a class
+- They are stateless
+  - They rely on props passed down from parent container
+- They do not have access to the `this`
+- Faster due to less overhead
 
 # State, props, and events
 
@@ -62,7 +74,7 @@ State is simply a JS object and is maintained by a class component. The state it
 
 ## Props
 
-Props are read-only values that are passed down the component tree. They will be the first argument in the `constructor` of a class component or of the function in a function component. 
+Props are read-only values that are passed down the component tree. They will be the first argument in the `constructor` of a class component or of the function in a function component.
 
 ## Events
 
@@ -97,7 +109,7 @@ There are tons of IDEs available for creating React applications. Idea/WebStorm 
 ## Requirements
 
 - To do items will have the following properties:
-  - id - uuid - system generated 
+  - id - uuid - system generated
   - title - string - name of the to do item
   - isCompleted - boolean - flag denoting whether the to do is completed
 - Users should be able create, update, delete and toggle complete on todo items
@@ -130,30 +142,30 @@ Start the application by running `yarn run start`. The application will be built
 
 ## Build app
 
-* Drop in API
-* Add initial state to `App` component
-* Render list of todos
-  * Note `key` property 
-* Wire up load todos API (in ctor)
-* Extract `TodoListItem` to functional component
-* Add check box to `TodoListItem` for `isCompleted`
-* Add event invoker to `TodoListItem` checkbox for checked changed
-* Add event handler to `App` to call api with change to todo
-* Add delete button to `TodoListItem` with event invoker on click
-* Add event handler to `App` to call api with delete
-* Create a functional component `AddForm` and build layout (input, button)
-* Attempt to add event invoker to `AddForm`
-  * How do we get the title?
-    * Add event to pass data up? (will work, not as testable and now `App` needs to know about state of a child component)
-* Change to class component
-* Bind text input to state
-  * Type in box, show doesn't work (props are read-only, one-way bindings)
-* Add state change handler to input to enable typing
-* Fix handler on `Add` button to call local method
-* Add event handler in `App` for adding todo, add to api
-* Add `isCompleted` checkbox to ui, update calls
-* I want to add a `line-through` to items where `isCompleted === true` 
-  * Don't go deep into styling
-* Do styling with css class
-  * Note the css file next to the class and the `import`
-* Do styling with inline styles
+- Drop in API
+- Add initial state to `App` component
+- Render list of todos
+  - Note `key` property
+- Wire up load todos API (in ctor)
+- Extract `TodoListItem` to functional component
+- Add check box to `TodoListItem` for `isCompleted`
+- Add event invoker to `TodoListItem` checkbox for checked changed
+- Add event handler to `App` to call api with change to todo
+- Add delete button to `TodoListItem` with event invoker on click
+- Add event handler to `App` to call api with delete
+- Create a functional component `AddForm` and build layout (input, button)
+- Attempt to add event invoker to `AddForm`
+  - How do we get the title?
+    - Add event to pass data up? (will work, not as testable and now `App` needs to know about state of a child component)
+- Change to class component
+- Bind text input to state
+  - Type in box, show doesn't work (props are read-only, one-way bindings)
+- Add state change handler to input to enable typing
+- Fix handler on `Add` button to call local method
+- Add event handler in `App` for adding todo, add to api
+- Add `isCompleted` checkbox to ui, update calls
+- I want to add a `line-through` to items where `isCompleted === true`
+  - Don't go deep into styling
+- Do styling with css class
+  - Note the css file next to the class and the `import`
+- Do styling with inline styles
